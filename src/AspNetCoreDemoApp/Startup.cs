@@ -7,6 +7,18 @@ namespace AspNetCoreDemoApp
 {
     public class Startup
     {
+        public IConfigurationRoot Configuration {  
+            get;  
+            set;  
+        }  
+        public static string ConnectionString {  
+            get;  
+            private set;  
+        }  
+        public Startup(IHostingEnvironment env) {  
+            Configuration = new ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile("app.json").Build();  
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -48,6 +60,8 @@ namespace AspNetCoreDemoApp
                 {
                     endpoints.MapDefaultControllerRoute();
                 });
+            
+            ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
         }
     }
 }
