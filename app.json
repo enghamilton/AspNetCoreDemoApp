@@ -11,5 +11,8 @@
     {
       "url": "https://github.com/jincod/dotnetcore-buildpack"
     }
-  ]
+  ],
+  "ConnectionStrings": {
+        "DefaultConnection": "server=;user=;password=;port=3306;database=;"
+    }
 }
