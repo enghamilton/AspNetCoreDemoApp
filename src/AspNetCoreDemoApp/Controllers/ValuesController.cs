@@ -22,7 +22,25 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet("{id}")]
 		public string Get(int id)
 		{
-			return "value";
+			//return "value";
+                        List<Object> resultado = new List<object>();
+                        resultado.Add(new
+                            {
+                                Nome = "user 01",
+                                URL = "www.linhadecodigo.com.br"
+                            });
+                                resultado.Add(new
+                            {
+                                Nome = "user 02",
+                                URL = "www.devmedia.com.br"
+                            });
+                                resultado.Add(new
+                            {
+                                Nome = "user 03",
+                                URL = "www.mrbool.com.br"
+                            });
+                    return Json(resultado, JsonRequestBehavior.AllowGet);
+
 		}
 	}
 }
