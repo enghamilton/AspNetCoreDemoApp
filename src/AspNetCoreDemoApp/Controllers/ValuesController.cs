@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Mvc;
 
 namespace AspNetCoreDemoApp.Controllers
 {
@@ -22,7 +23,10 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet("{id}")]
 		public string Get(int id)
 		{
-			return "value";
+                        var resultado = new {
+                        Nome = "Linha de Código",
+                        URL = "www.linhadecodigo.com.br" };
+                        return Json(resultado, JsonRequestBehavior.AllowGet);       
 		}
 	}
 }
