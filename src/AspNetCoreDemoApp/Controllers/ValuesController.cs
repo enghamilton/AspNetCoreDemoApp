@@ -21,9 +21,14 @@ namespace AspNetCoreDemoApp.Controllers
 
 		// GET api/values/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public JsonResult Get(int id)
 		{
-			return "value";
+		        var resultado = new
+                            {
+                                Nome = "user 01",
+                                URL = "www.website.com.br"
+                            };
+                        return Json(resultado, JsonRequestBehavior.AllowGet);
 		}
 	}
 }
