@@ -23,12 +23,7 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet("{id}")]
 		public JsonResult Get(int id)
 		{
-		        var resultado = new
-                            {
-                                Nome = "user 01",
-                                URL = "www.website.com.br"
-                            };
-                        return Json(resultado, JsonRequestBehavior.AllowGet);
+		   return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
 		}
 	}
 }
