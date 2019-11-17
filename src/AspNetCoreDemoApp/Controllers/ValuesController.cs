@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
+        [Produces("application/json")]
 	public class ValuesController : ControllerBase
 	{
 		// GET: api/values
