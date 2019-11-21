@@ -54,7 +54,6 @@ namespace AspNetCoreDemoApp
                     endpoints.MapDefaultControllerRoute();
                 });
             
-            ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
         }
     }
 }
