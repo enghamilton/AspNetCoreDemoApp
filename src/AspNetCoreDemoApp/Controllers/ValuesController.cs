@@ -20,9 +20,8 @@ namespace AspNetCoreDemoApp.Controllers
 
 		// GET api/values/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+                public JsonResult Get(int id)
 		{
-			//return "value";
                         List<Object> resultado = new List<object>();
                         resultado.Add(new
                             {
@@ -40,7 +39,8 @@ namespace AspNetCoreDemoApp.Controllers
                                 URL = "www.mrbool.com.br"
                             });
                     return Json(resultado, JsonRequestBehavior.AllowGet);
-
+		   //return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
 		}
+                
 	}
 }
