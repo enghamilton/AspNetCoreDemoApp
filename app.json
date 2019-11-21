@@ -13,6 +13,6 @@
     }
   ],
   "ConnectionStrings": {
-        "DefaultConnection": "server=ec2-107-22-195-114.compute-1.amazonaws.com;user=lhxxoevbfgvgvc;password=baad670077e67c6399caa6702876466596df6246b8a3a0f5bbd4a42d61dd9aa4;port=5432;database=d2g7mkcn53j713;"
+        "DefaultConnection": "server=ec2-107-20-168-237.compute-1.amazonaws.com;user=ivchhoxzrfmfxe;password=83dd727c514763e78f0874b3008a21ea0da43e93159933c599a89125823ba498;database=d5n07a5mqdt3lh;"
     }
 }
