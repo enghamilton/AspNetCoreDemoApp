@@ -26,17 +26,17 @@ namespace AspNetCoreDemoApp.Controllers
                         resultado.Add(new
                             {
                                 Nome = "user 01",
-                                URL = "www.linhadecodigo.com.br"
+                                URL = "www.website01.com.br"
                             });
                                 resultado.Add(new
                             {
                                 Nome = "user 02",
-                                URL = "www.devmedia.com.br"
+                                URL = "www.website02.com.br"
                             });
                                 resultado.Add(new
                             {
                                 Nome = "user 03",
-                                URL = "www.mrbool.com.br"
+                                URL = "www.website03.com.br"
                             });
                     return Json(resultado, JsonRequestBehavior.AllowGet);
 		   //return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
