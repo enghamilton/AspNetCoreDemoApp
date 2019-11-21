@@ -2,7 +2,6 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreDemoApp
 {
@@ -11,9 +10,6 @@ namespace AspNetCoreDemoApp
         
         public void ConfigureServices(IServiceCollection services)
         {
-           // Use a PostgreSQL database
-           var sqlConnectionString = Configuration.GetConnectionString("DefaultConnection");
- 
             services
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
                 .AddMvcCore()
