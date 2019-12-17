@@ -28,6 +28,9 @@ namespace AspNetCoreDemoApp
                         .AllowAnyMethod()
                         .AllowAnyHeader());
                 });
+            
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<ProductContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.Configure<ForwardedHeadersOptions>(options =>
             {
