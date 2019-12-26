@@ -22,6 +22,7 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet("{id}")]
                 public JsonResult Get(int id)
 		{
+                        /*
                         List<Object> resultado = new List<object>();
                         resultado.Add(new
                             {
@@ -39,7 +40,8 @@ namespace AspNetCoreDemoApp.Controllers
                                 URL = "www.website03.com.br"
                             });
                     return Json(resultado, JsonRequestBehavior.AllowGet);
-		   //return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
+                    */
+		   return Json(new {id="1", username="user 01", price="20.50", description="some text here hamilton"});
 		}
                 
 	}
