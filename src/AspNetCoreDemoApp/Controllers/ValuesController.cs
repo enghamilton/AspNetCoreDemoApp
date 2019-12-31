@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
+//
+using System.Linq;
+using System.Threading.Tasks;
+using AspNetCoreDemoApp.Model;
+//
+
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
 	public class ValuesController : Controller
 	{
+                private readonly ProductContext _context;
+                
+                public ValuesController(ProductContext context){
+                        _context = context;
+                }
+                
+                [HttpGet("/products")]
+                public async Task<ActionResult> Index(){
+                   return View(await _context.Products.toListAsync());
+                }
+                
 		// GET: api/values
 		[HttpGet]
 		public IEnumerable<string> Get()
