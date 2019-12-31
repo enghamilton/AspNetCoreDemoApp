@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AspNetCoreDemoApp.Model
 {
-    //[Table("tb_produto")]
+    [Table("tb_produto")]
     public class Product
     {
         [Key]
