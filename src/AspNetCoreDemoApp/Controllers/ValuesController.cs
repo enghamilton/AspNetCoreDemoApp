@@ -22,7 +22,7 @@ namespace AspNetCoreDemoApp.Controllers
                 
                 [HttpGet("/products")]
                 public async Task<ActionResult> Index(){
-                   return View(await _context.Products.toListAsync());
+                   return View(await _context.Products.toList());
                 }
                 
 		// GET: api/values
