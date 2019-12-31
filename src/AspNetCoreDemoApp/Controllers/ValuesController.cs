@@ -20,10 +20,17 @@ namespace AspNetCoreDemoApp.Controllers
                    _context = context;
                 }
                 
+                // GET: api/values/products
                 [HttpGet("/products")]
+                public IEnumerable<Product> GetProducts()
+                {
+                   return _context.Products;
+                }
+                /*
                 public async Task<ActionResult> Index(){
                    return View(await _context.Products.ToList());
                 }
+                */
                 
 		// GET: api/values
 		[HttpGet]
