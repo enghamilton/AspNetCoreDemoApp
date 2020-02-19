@@ -10,7 +10,8 @@ namespace AspNetCoreDemoApp.Controllers
 
         public string Index()
         {
-            return "This is my default action...";
+            //return "This is my default action...";
+            return View();
         }
 
         // 
