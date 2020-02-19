@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreDemoApp.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/[controller]/[action]")]
 	public class ValuesController : Controller
 	{
 		// GET: api/values
@@ -25,9 +25,9 @@ namespace AspNetCoreDemoApp.Controllers
 		   return Json(new {pid="1", username="user 01 hamilton", price="20.50", description="some text here"});
 		}
                 
-                // GET api/values/demo
-		[Route("Home/Index")]
-                public IActionResult Index()
+                // GET api/values/index
+		[HttpGet]
+                public ActionResult Index()
                 {
                    return View();
                 }
