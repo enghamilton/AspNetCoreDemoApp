@@ -26,7 +26,7 @@ namespace AspNetCoreDemoApp.Controllers
 		}
                 
                 // GET api/values/demo
-		[HttpGet("demo")]
+		[HttpGet("/demo")]
                 public IActionResult Index()
                 {
                    return View();
