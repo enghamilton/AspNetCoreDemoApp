@@ -48,9 +48,7 @@ namespace AspNetCoreDemoApp
                 .UseCors("CorsPolicy")
                 .UseEndpoints(endpoints =>
                 {
-                    endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Demo}/{action=Index}/{id?}");
+                    endpoints.MapDefaultControllerRoute();
                 });
         }
     }
