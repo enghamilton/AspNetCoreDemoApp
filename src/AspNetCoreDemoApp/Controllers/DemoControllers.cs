@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreDemoApp.Controllers
 {
-	[Route("api/[controller]")]
 	public class DemoController : Controller
 	{
 	   [Route("")]
@@ -13,7 +12,7 @@ namespace AspNetCoreDemoApp.Controllers
 	   [Route("Demo/Index")]
 	   public IActionResult Index()
 	   {
-		  return View("Views/Demo/index.cshtml");
+		  return View();
 	   }
 	   [Route("Demo/About")]
 	   public IActionResult About()
