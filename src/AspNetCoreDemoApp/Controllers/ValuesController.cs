@@ -22,7 +22,7 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet("{id}")]
 		public JsonResult Get(int id)
 		{
-		   return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
+		   return Json(new {pid="1", username="user 01 hamilton", price="20.50", description="some text here"});
 		}
                 
                 // GET api/values/demo
