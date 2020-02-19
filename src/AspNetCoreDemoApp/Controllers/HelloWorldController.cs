@@ -8,8 +8,6 @@ namespace AspNetCoreDemoApp.Controllers
         // 
         // GET: /HelloWorld/
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Index()
         {
             return View();
