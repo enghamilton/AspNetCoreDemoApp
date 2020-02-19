@@ -25,15 +25,6 @@ namespace AspNetCoreDemoApp.Controllers
 		{
 		   return Json(new {pid="1", username="user 01", price="20.50", description="some text here"});
 		}
-                
-                // GET: api/values/index
-		[HttpGet]
-                public IActionResult Index()
-                {
-                    ViewData["Message"] = "It works, done by Hamilton using C# .NET Core 3 MVC";
-                    
-                    return View("Views/Values/Index.cshtml");
-                }
 
 	}
 }
