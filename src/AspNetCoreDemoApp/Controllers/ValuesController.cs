@@ -26,7 +26,7 @@ namespace AspNetCoreDemoApp.Controllers
 		}
                 
                 // GET api/values/demo
-		[HttpGet("/demo")]
+		[Route("Home/Index")]
                 public IActionResult Index()
                 {
                    return View();
