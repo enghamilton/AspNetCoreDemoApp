@@ -46,12 +46,10 @@ namespace AspNetCoreDemoApp
                 .UseDefaultFiles()
                 .UseStaticFiles()
                 .UseCors("CorsPolicy")
-                /*
                 .UseEndpoints(endpoints =>
                 {
                     endpoints.MapDefaultControllerRoute();
                 });
-                */
                 .UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllerRoute(
