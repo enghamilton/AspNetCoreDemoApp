@@ -19,7 +19,7 @@ namespace AspNetCoreDemoApp
             services
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
                 //.AddMvcCore()
-                .AddControllersWithViews()
+                .AddControllersWithViews();
                 /*
                 .AddCors(options =>
                 {
