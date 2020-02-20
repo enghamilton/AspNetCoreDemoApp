@@ -20,6 +20,7 @@ namespace AspNetCoreDemoApp
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
                 //.AddMvcCore()
                 .AddControllersWithViews()
+                /*
                 .AddCors(options =>
                 {
                     options.AddPolicy("CorsPolicy",
@@ -27,7 +28,7 @@ namespace AspNetCoreDemoApp
                         .AllowAnyMethod()
                         .AllowAnyHeader());
                 });
-
+                
             services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedFor |
@@ -35,6 +36,7 @@ namespace AspNetCoreDemoApp
                 options.KnownNetworks.Clear();
                 options.KnownProxies.Clear();
             });
+            */
         }
 
         public void Configure(IApplicationBuilder app)
