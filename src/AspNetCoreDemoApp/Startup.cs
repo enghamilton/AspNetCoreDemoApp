@@ -18,9 +18,7 @@ namespace AspNetCoreDemoApp
         {
             services
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
-                //.AddMvcCore()
-                .AddControllersWithViews();
-                /*
+                .AddMvcCore()
                 .AddCors(options =>
                 {
                     options.AddPolicy("CorsPolicy",
@@ -36,7 +34,7 @@ namespace AspNetCoreDemoApp
                     options.KnownNetworks.Clear();
                     options.KnownProxies.Clear();
                 });
-                */
+
         }
 
         public void Configure(IApplicationBuilder app)
@@ -69,7 +67,10 @@ namespace AspNetCoreDemoApp
                     endpoints.MapControllerRoute(
                         name: "home",
                         pattern: "{controller=HelloWorld}/{action=Index}");
-                    endpoints.MapRazorPages();
+                    endpoints.MapControllerRoute(
+                        name: "second",
+                        pattern: "{controller=HelloWorld}/{action=Welcome}");
+                    
                 });
                 /*
                 .UseEndpoints(endpoints =>
