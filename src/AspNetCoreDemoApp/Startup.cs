@@ -18,7 +18,7 @@ namespace AspNetCoreDemoApp
         {
             services
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
-                .AddMvcCore()
+                //.AddMvcCore()
                 .AddControllersWithViews()
                 .AddCors(options =>
                 {
@@ -67,6 +67,7 @@ namespace AspNetCoreDemoApp
                     endpoints.MapControllerRoute(
                         name: "home",
                         pattern: "{controller=HelloWorld}/{action=Index}");
+                    endpoints.MapRazorPages();
                 });
                 /*
                 .UseEndpoints(endpoints =>
