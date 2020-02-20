@@ -14,74 +14,41 @@ namespace AspNetCoreDemoApp
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(IConfiguration configuration)
         {
-            services
-                .AddHttpsRedirection(options => { options.HttpsPort = 443; })
-                .AddMvcCore()
-                .AddCors(options =>
-                {
-                    options.AddPolicy("CorsPolicy",
-                        builder => builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
-                });
-                
-                services.Configure<ForwardedHeadersOptions>(options =>
-                {
-                    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor |
-                                               ForwardedHeaders.XForwardedProto;
-                    options.KnownNetworks.Clear();
-                    options.KnownProxies.Clear();
-                });
-
+            Configuration = configuration;
         }
 
-        public void Configure(IApplicationBuilder app)
-        {
-            app.UseForwardedHeaders();
+        public IConfiguration Configuration { get; }
 
-            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DYNO")))
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddRazorPages();
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
             {
-                Console.WriteLine("Use https redirection");
-                app.UseHttpsRedirection();
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
             }
 
-            app
-                .UseRouting()
-                .UseDefaultFiles()
-                .UseStaticFiles()
-                .UseCors("CorsPolicy")
-                /*
-                .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapDefaultControllerRoute();
-                });
-                */
-                /*
-                .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Values}/{action=Index}/{id?}");
-                    
-                    endpoints.MapControllerRoute(
-                        name: "home",
-                        pattern: "{controller=HelloWorld}/{action=Index}");
-                    endpoints.MapControllerRoute(
-                        name: "second",
-                        pattern: "{controller=HelloWorld}/{action=Welcome}");
-                    
-                });
-                */
-                
-                .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Values}/{action=Index}/{id?}");
-                });
-                
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
         }
     }
 }
