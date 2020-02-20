@@ -1,8 +1,13 @@
 using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
+
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+
 //using AspNtCoreDemoApp.Controllers.DemoController;
 
 namespace AspNetCoreDemoApp
@@ -14,6 +19,8 @@ namespace AspNetCoreDemoApp
             services
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
                 .AddMvcCore()
+                .AddRazorPages()
+                .AddControllersWithViews()
                 .AddCors(options =>
                 {
                     options.AddPolicy("CorsPolicy",
@@ -31,7 +38,7 @@ namespace AspNetCoreDemoApp
             });
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnviroment env)
         {
             app.UseForwardedHeaders();
 
