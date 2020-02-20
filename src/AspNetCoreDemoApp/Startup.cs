@@ -38,7 +38,7 @@ namespace AspNetCoreDemoApp
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnviroment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseForwardedHeaders();
 
