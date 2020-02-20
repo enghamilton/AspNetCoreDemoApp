@@ -55,11 +55,6 @@ namespace AspNetCoreDemoApp
                 /*
                 .UseEndpoints(endpoints =>
                 {
-                    endpoints.MapDefaultControllerRoute();
-                });
-                */
-                .UseEndpoints(endpoints =>
-                {
                     endpoints.MapControllerRoute(
                         name: "default",
                         pattern: "{controller=Values}/{action=Index}/{id?}");
@@ -67,6 +62,11 @@ namespace AspNetCoreDemoApp
                     endpoints.MapControllerRoute(
                         name: "home",
                         pattern: "{controller=HelloWorld}/{action=Index}");
+                });
+                */
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapDefaultControllerRoute();
                 });
                 /*
                 .UseEndpoints(endpoints =>
