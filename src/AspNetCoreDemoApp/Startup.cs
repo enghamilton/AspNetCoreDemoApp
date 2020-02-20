@@ -20,7 +20,6 @@ namespace AspNetCoreDemoApp
                 .AddHttpsRedirection(options => { options.HttpsPort = 443; })
                 .AddMvcCore()
                 .AddRazorPages()
-                .AddControllersWithViews()
                 .AddCors(options =>
                 {
                     options.AddPolicy("CorsPolicy",
